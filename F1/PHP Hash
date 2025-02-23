@@ -1,0 +1,15 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "f1_database");
+
+$username = "admin";
+$password = password_hash("admin123", PASSWORD_DEFAULT); // Hash รหัสผ่าน
+
+$sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $username, $password);
+$stmt->execute();
+
+echo "User created successfully!";
+$stmt->close();
+$conn->close();
+?>

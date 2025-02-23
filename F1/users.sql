@@ -1,0 +1,13 @@
+CREATE DATABASE f1_db;
+USE f1_db;
+
+CREATE TABLE cars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    year INT NOT NULL,
+    team VARCHAR(255) NOT NULL,
+    engine VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
+
+
